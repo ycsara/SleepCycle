@@ -1,1 +1,1 @@
-# SleepCycle
+This project aims to find insights into multiple factors that influence sleep patterns and overall lifestyle.
