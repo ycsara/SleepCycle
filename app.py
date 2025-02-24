@@ -28,14 +28,12 @@ st.plotly_chart(fig2)
 st.subheader('Group by Gender')
 st.write('The histogram displays the distribution grouped by gender.')
 
-gender = []
-
 box = st.checkbox('Click to group by gender')
 if box:
     fig3 = px.histogram(sh, x='Sleep Duration', nbins=20, color='Gender',
                         barmode='overlay', title='<b>Sleep Duration by Gender</b>',
                         labels={'Sleep Duration': 'Sleep Duration (hours)'})
 else:
-    fig = px.histogram(sh, x='Sleep Duration', title='<b>Sleep Duration</b>',
+    fig3 = px.histogram(sh, x='Sleep Duration', title='<b>Sleep Duration</b>',
                        labels={'Sleep Duration': 'Sleep Duration (hours)'}, nbins=20)
 st.plotly_chart(fig3)
