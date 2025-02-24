@@ -27,6 +27,13 @@ fig2 = px.scatter(sh,x='Quality of Sleep', y=selected_type2, color='Sleep Disord
 fig2.update_layout(title=f'<b> Quality of Sleep vs {selected_type2} by Sleep Disorders </b>')
 st.plotly_chart(fig2)
 
+#choose3 = ['Sleep Duration', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps']
+#selected_type3 = st.selectbox('Choose a variable to visualize', choose3)
+#fig2 = px.scatter(sh,x='Quality of Sleep', y=selected_type3 color='Sleep Disorder', 
+#                  size_max=13, trendline='ols')
+#fig2.update_layout(title=f'<b> Quality of Sleep vs {selected_type3} by Sleep Disorders </b>')
+#st.plotly_chart(fig3)
+
 st.subheader('Group by Gender')
 st.write('The histogram displays the distribution grouped by gender.')
 
