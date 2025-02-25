@@ -6,7 +6,10 @@ import statsmodels
 
 st.title('Sleep Health Data Analysis')
 
-sh = pd.read_csv('sleep_health_and_lifestyle_dataset.csv', sep=',')
+sh = pd.read_csv('sleep_health_lifestyle_dataset.csv', sep=',')
+sh = sh.rename(columns={'Sleep Duration (hours)':'Sleep Duration', 'Quality of Sleep (scale: 1-10)':'Quality of Sleep',
+                        'Stress Level (scale: 1-10)':'Stress Level', 'Blood Pressure (systolic/diastolic)':'Blood Pressure',
+                        'Heart Rate (bpm)':'Heart Rate', 'Physical Activity Level (minutes/day)':'Physical Activity Level'})
 
 st.subheader('Occupational Lifestyle Differences')
 st.write('This bar graph will show you the average differences in lifestyle by occupation.')
@@ -35,7 +38,7 @@ selected_type2 = st.selectbox('Choose a lifestyle variable to visualize', choose
                               key='sleep_disorders')
 sh['Sleep Disorder'].fillna('None', inplace=True)
 fig2 = px.scatter(sh,x='Quality of Sleep', y=selected_type2, color='Sleep Disorder', 
-                  size_max=13, trendline='ols')
+                  size_max=10, trendline='ols')
 fig2.update_layout(title=f'<b> Quality of Sleep vs {selected_type2} by Sleep Disorders </b>')
 st.plotly_chart(fig2)
 
@@ -52,11 +55,3 @@ filtered = sh[sh['BMI Category'] == bmi_choose]
 fig3 = px.histogram(filtered, x=selected_type3, color='Gender', nbins=10, barmode='overlay', 
     title=f'<b>{selected_type3} for {bmi_choose} BMI Category</b>', labels={selected_type3: selected_type3})
 st.plotly_chart(fig3)
-
-
-choose = ['Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 
-          'Stress Level', 'Heart Rate', 'Daily Steps']
-selected_type = st.selectbox('Choose a lifestyle variable to visualize', choose, key='lifestyle_selectbox')
-fig = px.histogram(sh, x=selected_type, color='BMI Category', nbins=10, barmode='overlay', 
-    title=f'<b>BMI Category</b>')
-st.plotly_chart(fig)
