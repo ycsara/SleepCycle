@@ -6,7 +6,7 @@ import statsmodels
 
 st.title('Sleep Health Data Analysis')
 
-sh = pd.read_csv('sleep_health_lifestyle_dataset.csv', sep=',')
+sh = pd.read_csv('sleep_health_lifestyle.csv', sep=',')
 sh = sh.rename(columns={'Sleep Duration (hours)':'Sleep Duration', 'Quality of Sleep (scale: 1-10)':'Quality of Sleep',
                         'Stress Level (scale: 1-10)':'Stress Level', 'Blood Pressure (systolic/diastolic)':'Blood Pressure',
                         'Heart Rate (bpm)':'Heart Rate', 'Physical Activity Level (minutes/day)':'Physical Activity Level'})
