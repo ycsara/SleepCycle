@@ -7,9 +7,7 @@ import statsmodels
 st.title('Sleep Health Data Analysis')
 
 sh = pd.read_csv('sleep_health_lifestyle.csv', sep=',')
-sh = sh.rename(columns={'Sleep Duration (hours)':'Sleep Duration', 'Quality of Sleep (scale: 1-10)':'Quality of Sleep',
-                        'Stress Level (scale: 1-10)':'Stress Level', 'Blood Pressure (systolic/diastolic)':'Blood Pressure',
-                        'Heart Rate (bpm)':'Heart Rate', 'Physical Activity Level (minutes/day)':'Physical Activity Level'})
+sh = sh.rename(columns={'Blood Pressure (systolic/diastolic)':'Blood Pressure', 'Heart Rate (bpm)':'Heart Rate'})
 
 st.subheader('Occupational Lifestyle Differences')
 st.write('This bar graph will show you the average differences in lifestyle by occupation.')
@@ -42,8 +40,8 @@ fig2 = px.scatter(sh,x='Quality of Sleep', y=selected_type2, color='Sleep Disord
 fig2.update_layout(title=f'<b> Quality of Sleep vs {selected_type2} by Sleep Disorders </b>')
 st.plotly_chart(fig2)
 
-st.subheader('Group by BMI Category')
-st.write('The histogram displays the distribution grouped by gender.')
+st.subheader('Different Lifestyles Based on BMI')
+st.write('The histogram will show you the distribution of lifestyle habits grouped by BMI categories and gender.')
 
 bmi = sh['BMI Category'].unique()
 choose3 = ['Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 

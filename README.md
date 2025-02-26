@@ -1,2 +1,3 @@
-This project aims to find insights into multiple factors that influence sleep patterns and overall lifestyle.  
-Check out the Render at https://sleephealth.onrender.com
+Sleep is an important part of human health and well-being, influencing physical, mental, and emotional performance. Understanding the factors that affect sleep patterns and quality can provide valuable insights into improving overall health and productivity. This analysis explores the `Sleep Health and Lifestyle Dataset`, which contains information on various lifestyle and health metrics, including sleep duration, quality of sleep, physical activity levels, stress levels, BMI categories, and the presence of sleep disorders.  
+
+Check out the Render at https://sleephealth.onrender.com  
